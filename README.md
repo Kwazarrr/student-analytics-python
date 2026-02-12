@@ -47,6 +47,22 @@ The project includes:
 - `sum_grades_by_group()` — sum aggregation
 - `avg_grade_of_groups()` — average aggregation
 
+- ---
+
+## 🏗 Data Flow
+
+students.csv
+    ↓
+load_students()
+    ↓
+List[Dict]
+    ↓
+Aggregation functions:
+    - count_students_by_group()
+    - sum_grades_by_group()
+    - avg_grade_of_groups()
+
+
 ---
 
 ## ▶️ How to Run
