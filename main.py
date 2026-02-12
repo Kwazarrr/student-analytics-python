@@ -47,24 +47,14 @@ def sum_grades_by_group(students):
 
 
 def avg_grade_of_groups(students):
-    sum_grades = {}
-    count_grades = {}
-    avg_grades = {}
+    sums = sum_grades_by_group(students)
+    counts = count_students_by_group(students)
 
-    for student in students:
-        group = student["group"]
-        grade = student["grade"]
-        if group not in sum_grades:
-            sum_grades[group] = grade
-            count_grades[group] = 1
-        else:
-             sum_grades[group] += grade
-             count_grades[group] += 1
+    avgs = {}
+    for group in sums:
+        avgs[group] = sums[group] / counts[group]
 
-    for group in sum_grades:
-        avg_grades[group] = sum_grades[group] / count_grades[group]
-
-    return avg_grades    
+    return avgs
 
 students = load_students("students.csv")
 
